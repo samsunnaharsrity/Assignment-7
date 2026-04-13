@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
-import vectorImg from '../../assets/image/vector.png'
-import clickImg from '../../assets/image/clock.png'
-import chartlineImg from '../../assets/image/chartline.png'
+import { RiHome2Line } from "react-icons/ri";
+import { IoTimeOutline } from "react-icons/io5";
+import { FaChartLine } from "react-icons/fa6";
+
+
 
 const Navbar = () => {
     return (
@@ -19,8 +21,7 @@ const Navbar = () => {
                         `flex items-center gap-1 ${
                          isActive ? 'bg-[#244d3f] text-white px-2 py-1 font-bold' : ''}`
                         )}>
-                        <img className='w-[12px] h-[12px] ' src={vectorImg} alt="vectorImg" />
-
+                        <RiHome2Line />
                         Home</NavLink>
                     </button>
 
@@ -31,7 +32,7 @@ const Navbar = () => {
                         ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold' : ''}
                         `}
                         >
-                        <img className='w-[12px] h-[12px]' src={clickImg} alt="clickImg" />
+                        <IoTimeOutline />
                         Timeline</NavLink>
                     </button>
 
@@ -42,7 +43,7 @@ const Navbar = () => {
                         ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold' :''}
                         `} 
                         >
-                        <img className='w-[12px] h-[12px]' src={chartlineImg} alt="chartlineImg" />
+                        <FaChartLine />
                         Stats</NavLink>
                     </button>
                     
