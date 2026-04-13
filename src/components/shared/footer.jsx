@@ -56,13 +56,7 @@ const Footer = () => {
 
     <p>© {new Date().getFullYear()}KeenKeeper. All rights reserved.</p>
   </aside>
-  <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end text-[12px] mt-5">
-        <p>Privacy Policy</p>
-        <p>Terms of Service</p>
-        <p>Cookies</p>
 
-    
-  </nav>
 </footer>
 </footer>
         </div>
