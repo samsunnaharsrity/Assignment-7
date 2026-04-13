@@ -6,7 +6,7 @@ import chartlineImg from '../../assets/image/chartline.png'
 
 const Navbar = () => {
     return (
-        <div className='shadow'>
+        <div className='shadow sticky top-0 bg-white'>
             <div className='flex justify-between w-10/12 mx-auto '>
                 <div className='text-black font-bold py-2'> 
                     <h2>Keen<span className='text-[#244d3f]'>Keeper</span></h2>
