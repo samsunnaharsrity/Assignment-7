@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FriendsCard from '../ui/friendscard';
+import { PacmanLoader } from 'react-spinners';
+import { Link } from 'react-router';
 
 const FriendsSection = () => {
 
@@ -32,9 +34,17 @@ console.log('friendsData:',friendsData,loading);
             </div>
             friends = {friendsData.length}
 
-        <div className='grid grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
+
+        {
+            loading ? (
+                <div className='flex h-full items-center justify-center p-20'>
+                    <PacmanLoader color='#244d3f' />
+                </div>
+            ):
+            <div className='grid grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
+        
             {
-                friendsData.map((friend,index)=>
+                friendsData.slice(0,8).map((friend,index)=>
                    <FriendsCard friend={friend} index={index}></FriendsCard>
                 // <div key={index} className='shadow rounded-2xl py-6'>
                 //     <div className='flex items-center justify-center'>
@@ -72,8 +82,13 @@ console.log('friendsData:',friendsData,loading);
 
                 // </div>
                 )
-            }            
+            } 
         </div>
+        }
+
+        {/* <Link>
+            <button className=''>View All</button>
+        </Link> */}
         </div>
     );
 }
