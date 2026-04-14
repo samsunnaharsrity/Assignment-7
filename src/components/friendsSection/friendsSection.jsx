@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import FriendsCard from '../ui/friendscard';
 import { PacmanLoader } from 'react-spinners';
-import { Link } from 'react-router';
+import { IoIosArrowUp } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
+
 
 const FriendsSection = () => {
 
 const [friendsData , setFriendsData] = useState([])
 const [loading , setLoading] = useState(true)
+const [viewAll , setViewAll] = useState(false)
+
+
+const viewAllFriends = viewAll ?  friendsData : friendsData.slice(0,8)
 
 useEffect(()=>{
 
@@ -27,6 +34,7 @@ useEffect(()=>{
 
 console.log('friendsData:',friendsData,loading);
 
+
     return (
         <div className='w-8/12 mx-auto mb-10 '>
             <div>
@@ -44,7 +52,7 @@ console.log('friendsData:',friendsData,loading);
             <div className='grid grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
         
             {
-                friendsData.slice(0,8).map((friend,index)=>
+                viewAllFriends.map((friend,index)=>
                    <FriendsCard friend={friend} index={index}></FriendsCard>
                 // <div key={index} className='shadow rounded-2xl py-6'>
                 //     <div className='flex items-center justify-center'>
@@ -84,11 +92,27 @@ console.log('friendsData:',friendsData,loading);
                 )
             } 
         </div>
-        }
+        
 
-        {/* <Link>
-            <button className=''>View All</button>
-        </Link> */}
+    }
+                {/* all friends view btn */}
+        <div className='text-center'>
+
+            <button className='btn bg-[#244d3f] text-white mt-3 hover:bg-[#427a67]'
+            onClick={()=> setViewAll(!viewAll)}
+            >
+                {viewAll? 
+                <div className='flex items-center gap-2'> 
+                    <IoIosArrowUp />
+                    View Less
+                </div> : 
+                <div className='flex items-center gap-2'>
+                    <MdOutlineKeyboardArrowDown /> 
+                    View More
+                </div>
+                }
+            </button>         
+        </div>
         </div>
     );
 }

@@ -19,7 +19,7 @@ const Navbar = () => {
                         <NavLink to='/' 
                         className={({ isActive }) => (
                         `flex items-center gap-1 ${
-                         isActive ? 'bg-[#244d3f] text-white px-2 py-1 font-bold' : ''}`
+                         isActive ? 'bg-[#244d3f] text-white px-2 py-1 font-bold rounded-md' : ''}`
                         )}>
                         <RiHome2Line />
                         Home</NavLink>
@@ -29,7 +29,7 @@ const Navbar = () => {
                         <NavLink to={"/timeLine"}
                         className={({isActive})=>`
                         flex items-center gap-1
-                        ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold' : ''}
+                        ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold rounded-md' : ''}
                         `}
                         >
                         <IoTimeOutline />
@@ -40,7 +40,7 @@ const Navbar = () => {
                         <NavLink to={'/state'}
                         className={({isActive})=>`
                         flex items-center gap-1
-                        ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold' :''}
+                        ${isActive? 'bg-[#244d3f] text-white px-2 py-1 font-bold rounded-md' :''}
                         `} 
                         >
                         <FaChartLine />

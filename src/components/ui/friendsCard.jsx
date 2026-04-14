@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const FriendsCard = ({index ,friend}) => {
     return (
         <div>
