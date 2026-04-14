@@ -50,19 +50,18 @@ const Footer = () => {
   </nav>
   </aside>
 
-  <footer className="footer sm:footer-horizontal text-neutral-content items-center justify-between border-t border-[#3e5c50] ">
+  <footer className="flex flex-col lg:flex-row items-center justify-between w-full border-t border-[#3e5c50] px-4 py-4 text-center ">
     
-  <aside className="grid-flow-col items-center text-[12px] mt-5">
+  <aside className="text-[12px] md:text-left">
 
     <p>© {new Date().getFullYear()}KeenKeeper. All rights reserved.</p>
   </aside>
-  <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end text-[12px] mt-5">
+  <nav className="flex flex-col md:flex-row gap-4 text-[12px] items-center">
         <p>Privacy Policy</p>
         <p>Terms of Service</p>
         <p>Cookies</p>
-
-    
   </nav>
+  
 </footer>
 </footer>
         </div>
