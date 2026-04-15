@@ -3,34 +3,39 @@ import FriendsCard from '../ui/friendscard';
 import { PacmanLoader } from 'react-spinners';
 import { IoIosArrowUp } from "react-icons/io";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import FetchData from '../../hooks/FetchData';
 
-
+                    // main section of friends data
 
 const FriendsSection = () => {
 
-const [friendsData , setFriendsData] = useState([])
-const [loading , setLoading] = useState(true)
+                    //custom hooks    
+const {friendsData , loading} = FetchData()
+console.log(friendsData , loading);
+
+// const [friendsData , setFriendsData] = useState([])
+// const [loading , setLoading] = useState(true)
 const [viewAll , setViewAll] = useState(false)
 
 
 const viewAllFriends = viewAll ?  friendsData : friendsData.slice(0,8)
 
-useEffect(()=>{
+// useEffect(()=>{
 
-    const dataFetch = async()=>{
-        const res = await fetch('/friends.json')
-        const friends = await res.json();
-        console.log(friends);
+//     const dataFetch = async()=>{
+//         const res = await fetch('/friends.json')
+//         const friends = await res.json();
+//         console.log(friends);
 
-        setTimeout(() => {
+//         setTimeout(() => {
             
-            setFriendsData(friends)
-            setLoading(false)
-        }, 1500);
-    }
+//             setFriendsData(friends)
+//             setLoading(false)
+//         }, 1000);
+//     }
 
-    dataFetch()
-},[])
+//     dataFetch()
+// },[])
 
 console.log('friendsData:',friendsData,loading);
 
@@ -49,11 +54,11 @@ console.log('friendsData:',friendsData,loading);
                     <PacmanLoader color='#244d3f' />
                 </div>
             ):
-            <div className='grid grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
         
             {
                 viewAllFriends.map((friend,index)=>
-                   <FriendsCard friend={friend} index={index}></FriendsCard>
+                   <FriendsCard friend={friend} key={index}></FriendsCard>
                 // <div key={index} className='shadow rounded-2xl py-6'>
                 //     <div className='flex items-center justify-center'>
                 //         <img className='w-[45px] h-[45px] rounded-full ' src={friend.image} alt="image" />

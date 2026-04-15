@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className=' bg-[#244d3f]'>
-            <footer className="footer footer-horizontal footer-center text-primary-content p-10 container mx-auto">
+            <footer className="footer footer-horizontal footer-center text-primary-content p-5 container mx-auto">
   <aside>
     <h2 className='font-bold text-5xl'>Keen<span className='font-semibold'>Keeper</span></h2>
     <p className="font-bold text-[10px]">

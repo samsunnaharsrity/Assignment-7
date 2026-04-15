@@ -1,6 +1,7 @@
 import React from 'react';
 
-
+//custom data from main id
+//show data ui 
 const FriendsCard = ({index ,friend}) => {
     return (
         <div>
