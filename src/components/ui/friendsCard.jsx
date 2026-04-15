@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 //custom data from main id
 //show data ui 
 const FriendsCard = ({index ,friend}) => {
     return (
         <div>
-            <div key={index} className='shadow rounded-2xl py-6 space-y-2'>
+            <Link to={`/friends/${friend.id}`} key={index} className='block shadow-md hover:shadow-xl transition duration-300 rounded-2xl py-6 space-y-2'>
                 <div className='flex items-center justify-center'>
                     <img className='w-[45px] h-[45px] rounded-full ' src={friend.image} alt="image" />
                 </div>
 
                 <div><p className='font-bold text-md'>{friend.name}</p></div>
-                <div><p className='text-[#64748b] text-[10px]'>{friend.lastContact}</p></div>
+                <div><p className='text-[#64748b] text-[10px]'>{friend.lastContact}d ago</p></div>
 
                 {/* tag btn list */}
                 <div>
@@ -39,7 +40,7 @@ const FriendsCard = ({index ,friend}) => {
                     </button>
                 </div>
 
-            </div>            
+            </Link>            
         </div> 
     );
 }

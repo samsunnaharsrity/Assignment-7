@@ -54,7 +54,7 @@ console.log('friendsData:',friendsData,loading);
                     <PacmanLoader color='#244d3f' />
                 </div>
             ):
-            <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 text-center items-center justify-center space-y-3'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 text-center items-center justify-center space-y-3 '>
         
             {
                 viewAllFriends.map((friend,index)=>
