@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Activity, useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import FetchData from '../../hooks/FetchData';
 import { PacmanLoader } from 'react-spinners';
@@ -8,6 +8,8 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineTextsms } from "react-icons/md";
 import { IoVideocamOutline } from "react-icons/io5";
+import { FriendsDataContext } from '../../context/contextProvider';
+import { toast } from 'react-toastify';
 
 
 const FriendsDetails = () => {
@@ -21,8 +23,39 @@ console.log(friendsData , loading);
 const findingFriends = friendsData.find((friend) => friend.id === Number(id))
 console.log(findingFriends);
 
-const [call , setCall] = useState([]);
 
+const {timeLine , setTimeLine} = useContext(FriendsDataContext)
+
+//toastify
+
+const showToast = (type )=>{
+    if(type === 'success'){
+        toast.success (`${type}`)
+    }
+    else{
+        return
+    }
+}
+
+const handleCall = (type) =>{
+    console.log(handleCall);
+    const newTime = {
+        type: type,
+        time: new Date().toLocaleDateString('en-US',
+            {
+                month:'short',
+                day: 'numeric',
+                year: 'numeric'
+            }
+        ),
+        name: findingFriends.name,
+    }
+
+    setTimeLine((activity) => [ ...activity,newTime])
+    toast.success(`${type} added for ${findingFriends.name}`)
+}
+
+            //loading
 if (loading){
     return (
                 <div className='flex h-full items-center justify-center p-20'>
@@ -31,12 +64,6 @@ if (loading){
             )
 }
 
-
-const handleCall =()=>{
-    setCall({...call, findingFriends})
-}
-console.log('calls',call);
-
     return (
         <div className='my-10 gap-4 lg:flex w-10/12 mx-auto justify-center '>
             {/* left side */}
@@ -44,6 +71,9 @@ console.log('calls',call);
             <div className='shadow rounded-md py-6 space-y-2 p-5 '>
                     <div className='flex items-center justify-center'>
                         <img className='w-[45px] h-[45px] rounded-full' src={findingFriends.image} alt="image" />
+                    </div>
+                    <div className='flex items-center justify-center'>
+                        <h2 className='font-bold text-md'>{findingFriends.name}</h2>
                     </div>
 
 
@@ -111,25 +141,25 @@ console.log('calls',call);
 
         
             {/* right side */}
-            <div className='max-w-60% space-y-9'>
+            <div className='max-w-60% space-y-10'>
 
                 <div className='flex gap-4'>
-                    <div className='shadow p-3 rounded-md text-center'>
+                    <div className='shadow p-4 rounded-md text-center'>
                         <h2 className='text-[#244d3f] text-[20px] font-semibold'>{findingFriends.lastContact}</h2>
                         <p className='text-[#64748b] text-[10px] font-semibold '>Days Since Contact</p>
                     </div>
-                    <div className='shadow p-3 rounded-md text-center'>
+                    <div className='shadow p-4 rounded-md text-center'>
                         <h2 className='text-[#244d3f] text-[20px] font-semibold'>{findingFriends.goalDays}</h2>
                         <p className='text-[#64748b] text-[10px] font-semibold '>Goal (Days)</p>
                     </div>
-                    <div className='shadow p-3 rounded-md text-center'>
-                        <h2 className='text-[#244d3f] text-[20px] font-semibold'>Feb 27, 2026</h2>
+                    <div className='shadow p-4 rounded-md text-center'>
+                        <h2 className='text-[#244d3f] text-[20px] font-semibold'>{`${ new Date().toLocaleDateString()}`}</h2>
                         <p className='text-[#64748b] text-[10px] font-semibold '>Next Due</p>
                     </div>
                 </div>
 
 
-                <div className='shadow p-3 rounded-md space-y-2'>
+                <div className='shadow p-3 rounded-md space-y-4'>
                     <div className='flex justify-between '>
                         <h2 className='text-[#244d3f] font-semibold'>Relationship Goal</h2>
                         <button className='bg-gray-100 px-3 py-1 rounded-sm text-[10px]'>Edit</button>
@@ -140,27 +170,32 @@ console.log('calls',call);
                 </div>
 
 
-                <div className='shadow p-3 rounded-md space-y-3'>
+                <div className='shadow p-3 rounded-md space-y-4'>
                     <div>
                         <h2 className='text-[#244d3f] font-semibold'>Quick Check-In</h2>
                     </div>
 
                     <div className='flex justify-between items-center '>
 
-                    <div className='shadow rounded-md px-10 py-3 '>
-                        <p className=''><IoCallOutline /></p>
-                        <p className='text-[#64748b] text-[10px]'>Call</p>
-                    </div>
+                    <button className='shadow rounded-md text-center px-10 py-3'
+                         onClick={() => handleCall('Call')}>   
+                        <IoCallOutline className='text-[20px]'/>
+                            <p className='text-[#64748b] text-[10px]'>Call</p>
+                    </button>
 
-                    <div className='shadow rounded-md text-center px-10 py-3'>
-                        <MdOutlineTextsms />
-                        <p className='text-[#64748b] text-[10px]'>Text</p>
-                    </div>
+                    <button className='shadow rounded-md text-center px-10 py-3'
+                        onClick={() => handleCall('Text')}>
+                        <MdOutlineTextsms className='text-[20px]'/>
+                        <p className='text-[#64748b] text-[10px]'>
+                            Text
+                        </p>
+                    </button>
                     
-                    <div className='shadow rounded-md text-center px-10 py-3'>
-                        <IoVideocamOutline />
+                    <button className='shadow rounded-md text-center px-10 py-3'
+                        onClick={() => handleCall('Video')}>
+                        <IoVideocamOutline className='text-[20px]'/>
                         <p className='text-[#64748b] text-[10px]'>Video</p>
-                    </div>
+                    </button>
 
                     </div>    
                 </div>

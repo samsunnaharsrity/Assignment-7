@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layout/rootLayout";
 import Home from "../pages/homePage/home";
-import TimeLine from "../pages/timeLine/timeLine";
 import Stats from "../pages/stats/stats";
 import NotFoundPage from "../pages/notFoundPage/notFoundPage";
 import FriendsDetails from "../pages/friendsDetails/friendsDetails";
+import TimeLine from "../pages/timeLine/timeLine";
 
 
 
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
     element: <RootLayout></RootLayout>,
     children:[
       {
-        index:"true",
+        index:true,
         element: <Home></Home>,
         loader : () => fetch('/friends.json'),
       },
