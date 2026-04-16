@@ -37,7 +37,7 @@ console.log(timeLine);
             <div className='space-y-5'>
                 {
                 timeLine?.length === 0 ? (
-                <p>No activity yet</p>
+                <p>No data on this page now!</p>
                 ) :
                 ( timeLine?.map((findingFriends,index) =>(
                     <div key={index} className='shadow p-2 rounded-md '>
