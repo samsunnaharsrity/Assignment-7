@@ -46,11 +46,12 @@ if (loading){
     return (
         <div className='w-8/12 mx-auto my-15 '>
 
-            <select onChange={(event)=> setFilterData(event.target.value)} className="input cursor-pointer" 
+            <select onChange={(event)=> setFilterData(event.target.value)}
+            className="input cursor-pointer mb-5 w-[200px] h-[25px] text-[#64748b] text-[13px] border-none shadow" 
             type="text"
             placeholder="Filter Timeline" 
             value={filterData} >
-            <option value="">All</option>
+            <option value="">Filter Timeline Data</option>
             <option value="Call">Call</option>
             <option value="Text">Text</option>
             <option value="Video">Video</option>
