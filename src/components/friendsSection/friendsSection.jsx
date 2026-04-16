@@ -43,9 +43,9 @@ console.log('friendsData:',friendsData,loading);
     return (
         <div className='w-8/12 mx-auto mb-10 '>
             <div>
-                <h2 className='text-xl font-bold'>Your Friends</h2>
+                <h2 className='text-xl font-bold mb-5'>Your Friends</h2>
             </div>
-            friends = {friendsData.length}
+            {/* friends = {friendsData.length} */}
 
 
         {

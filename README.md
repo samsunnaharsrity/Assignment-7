@@ -1,16 +1,37 @@
-# React + Vite
+1. Name of your project?
+ans: My project name is KeenKeeper . This application helps us to maintain our regular relationship with friends or contact.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+2. A short description
+ans: KeenKeeper is a very useful project .It is a clean and practical idea .Its usually managed relationship and also reminder app.This app is primarily designed to help you avoid forgetting to stay in touch with important people and to keep your relationships consistently strong.
+This app also tracked:-
+    when was the last time you talked to someone
+    which relationship needs attention
+    how long you should wait before reaching out again.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+3. Technologies you used
+ans: Technologies i used
+i. React.js to (Build the UI)
+ii. React Router DOM to (Handle page navigation)
+iii. Tailwind CSS+ (Any component library	Styling and responsiveness)
+iv. Recharts to (Chart)
+v. React toastify to use (alert / notification message)
+vi. Daisy Ui (design and style ui section) 
+vii. React icon for (collect icons)
+viii. Imgbb (image url)
+ix. react spinner use for (loading indicator ans style)
+etc.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+4. 3 key features of your project
+ans: 3 key features of my project :-
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+i. Friends Management:-
+It helps us to add friends or contact others and store basic information like Email, Bio, Name and Tags.
+
+ii. Smart reminder system:-
+This app automatically track and notify . Set a goal for how often to stay in touch.
+
+iii.filtering and notification:-
+Filtering timeline by interaction type . Easily fined specific activity and searching data. Show alert for notification actions.
