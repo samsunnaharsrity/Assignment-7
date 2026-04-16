@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FriendsDataContext } from '../../context/contextProvider';
 import FetchData from '../../hooks/FetchData';
 import { PacmanLoader } from 'react-spinners';
@@ -16,9 +16,21 @@ const TimeLine = () => {
     const {timeLine , setTimeLine} = useContext(FriendsDataContext)
     console.log(timeLine , setTimeLine, 'contextData');
     
+    //fetch data import
     const {friendsData , loading} = FetchData()
     console.log(friendsData , loading);
     
+
+    //filtered data
+    const [filterData, setFilterData ] = useState('All')
+    
+    const filteredAllData = filterData === '' || filterData === 'All'?
+        timeLine : 
+        timeLine.filter(item => item.type === filterData)
+
+
+
+
                 //loading
 if (loading){
     return (
@@ -28,18 +40,34 @@ if (loading){
             )
 }
 
-console.log(timeLine);
-    
+//console.log(timeLine);
+
+
     return (
-        <div className='w-8/12 mx-auto my-15'>
+        <div className='w-8/12 mx-auto my-15 '>
+
+            <select onChange={(event)=> setFilterData(event.target.value)} className="input cursor-pointer" 
+            type="text"
+            placeholder="Filter Timeline" 
+            value={filterData} >
+            <option value="">All</option>
+            <option value="Call">Call</option>
+            <option value="Text">Text</option>
+            <option value="Video">Video</option>
+            </select>
+
+
+        <div className='shadow rounded-md p-5'>   
             <h2 className='font-bold text-xl mb-5'>Time Line</h2>
 
             <div className='space-y-5'>
                 {
-                timeLine?.length === 0 ? (
-                <p>No data on this page now!</p>
+                filteredAllData?.length === 0 ? (
+                <p className='flex h-full items-center justify-center p-20 text-xl font-bold text-[#244d3f]'>
+                    No data on this page now!
+                </p>
                 ) :
-                ( timeLine?.map((findingFriends,index) =>(
+                ( filteredAllData?.map((findingFriends,index) =>(
                     <div key={index} className='shadow p-2 rounded-md '>
                         <div className='flex items-center'>
                             <div className='flex items-center text-[20px] px-3'>
@@ -60,6 +88,8 @@ console.log(timeLine);
                     ))
                 }
             </div>
+        </div>
+
         </div>
     );
 }
