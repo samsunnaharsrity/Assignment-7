@@ -1,37 +1,127 @@
-1. Name of your project?
-ans: My project name is KeenKeeper . This application helps us to maintain our regular relationship with friends or contact.
+# 📱 KeenKeeper
 
+A modern relationship management and reminder application that helps users maintain meaningful connections with friends, family, and important contacts.
 
-2. A short description
-ans: KeenKeeper is a very useful project .It is a clean and practical idea .Its usually managed relationship and also reminder app.This app is primarily designed to help you avoid forgetting to stay in touch with important people and to keep your relationships consistently strong.
-This app also tracked:-
-    when was the last time you talked to someone
-    which relationship needs attention
-    how long you should wait before reaching out again.
+## 🔗 Live Demo
 
+👉 https://assignment-7-nine-bice.vercel.app
 
-3. Technologies you used
-ans: Technologies i used
-i. React.js to (Build the UI)
-ii. React Router DOM to (Handle page navigation)
-iii. Tailwind CSS+ (Any component library	Styling and responsiveness)
-iv. Recharts to (Chart)
-v. React toastify to use (alert / notification message)
-vi. Daisy Ui (design and style ui section) 
-vii. React icon for (collect icons)
-viii. Imgbb (image url)
-ix. react spinner use for (loading indicator ans style)
-etc.
+---
 
+## 📖 Project Overview
 
-4. 3 key features of your project
-ans: 3 key features of my project :-
+**KeenKeeper** is a user-friendly relationship management application designed to help users stay connected with the people who matter most. It reminds users to keep in touch with friends, family, and colleagues, ensuring that important relationships never fade away.
 
-i. Friends Management:-
-It helps us to add friends or contact others and store basic information like Email, Bio, Name and Tags.
+The application intelligently tracks interactions and provides reminders, making it easier to maintain strong and healthy relationships.
 
-ii. Smart reminder system:-
-This app automatically track and notify . Set a goal for how often to stay in touch.
+---
 
-iii.filtering and notification:-
-Filtering timeline by interaction type . Easily fined specific activity and searching data. Show alert for notification actions.
+## ✨ Key Features
+
+### 👥 Friends Management
+- Add and manage friends or contacts.
+- Store important information such as Name, Email, Bio, Tags, and Relationship Type.
+- Edit or delete contact information anytime.
+
+### 🔔 Smart Reminder System
+- Automatically reminds users when it's time to reconnect.
+- Set personalized reminder intervals.
+- Never forget important relationships again.
+
+### 🔍 Search & Filter
+- Search contacts instantly.
+- Filter contacts by relationship type or tags.
+- Easily find people who need your attention.
+
+### 📊 Dashboard & Analytics
+- Visualize relationship activity with charts.
+- Track recent interactions.
+- Monitor relationship engagement over time.
+
+### 🔔 Toast Notifications
+- Instant success and error notifications.
+- Friendly user experience with alert messages.
+
+---
+
+# 🛠️ Technologies Used
+
+## Frontend
+- React.js
+- React Router DOM
+- Tailwind CSS
+- DaisyUI
+
+## Libraries
+- Recharts
+- React Toastify
+- React Icons
+- React Spinners
+
+## Image Hosting
+- ImgBB
+
+## Deployment
+- Vercel
+
+---
+
+# 📦 Dependencies
+
+```bash
+react
+react-router-dom
+tailwindcss
+daisyui
+react-icons
+react-toastify
+recharts
+react-spinners
+axios
+```
+
+---
+
+# 🚀 Installation & Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/keenkeeper.git
+```
+
+### Go to project directory
+
+```bash
+cd keenkeeper
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🌐 Links
+
+### Live Website
+
+https://assignment-7-nine-bice.vercel.app
+
+---
+
+# 👩‍💻 Author
+
+**Samsun Nahar**
+
+- GitHub: https://github.com/samsunnaharsrity
+- LinkedIn: https://linkedin.com/in/samsunnahar
+- Portfolio: https://my-portfolio-nu-six-20.vercel.app
