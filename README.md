@@ -87,7 +87,7 @@ axios
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/keenkeeper.git
+git clone https://github.com/samsunnaharsrity/keenkeeper.git
 ```
 
 ### Go to project directory
